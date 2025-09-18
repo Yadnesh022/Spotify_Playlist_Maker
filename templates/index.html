@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Playlist Maker</title>
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
+
+
+</head>
+
+<body>
+
+
+    <div id="homemain">
+        <div class="smallh">
+            <h1 class="mainanimation magnet">Spotify Playlist Maker</h1>
+        </div>
+   
+        <div class="headings">
+            <h1 class="hvr ">Beat </h1>
+            <h1 class="hvr">Melody </h1>
+            <h1 class="hvr">Rhythm </h1>
+        </div>
+    </div>
+
+    <div class="h1div">
+        <h1 class="mainanimation magnet">Spotify Playlist Maker</h1>
+    </div>
+
+    <div class="formcontainer">
+        <form action="{{ url_for('create_playlist') }}" method="POST">
+            <label class="lbl" for="mood">Enter your mood</label><br>
+            <input class="input" type="text" id="mood" name="mood" required><br><br>
+            <label class="lbl" for="num_songs">Enter the number of songs:</label><br>
+            <input class="input" type="number" id="num_songs" name="num_songs" min="1" required><br><br>
+
+            <label class="lbl" for="language">Select language:</label><br>
+            <select class="inputoption input" id="language" name="language">
+                <option value="hindi">Hindi</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+            </select><br><br>
+
+            <input type="submit" class="magnet submitbtn" value="Create Playlist">
+        </form>
+        <!-- {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %} -->
+    </div>
+    <ul>
+        <div class="msgdiv cursor">
+               {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+           
+        </div>
+
+    </ul>
+   <!-- Gsap is needed for Basic Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- Scroll Trigger is needed for Scroll Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.161.0/three.module.min.js"
+    integrity="sha512-2ETlv32qrfm+NsHwrAm0lXEkgY92J3cymKQpzRxSY4dUzbdmf1RkizUnD16PvtB9KUeNLn/npnA0/5vRtY2N5A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+<script src="{{ url_for('static', filename='script/script.js') }}"></script>
+</body>
+
+</html>
