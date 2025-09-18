@@ -1,3 +1,4 @@
+This project utilizes Flask and the Spotify API to dynamically create personalized playlists based on mood and language preferences, showcasing skills in web development and API integration.
 <img width="1253" height="705" alt="image" src="https://github.com/user-attachments/assets/cd8d5ed8-87c8-4387-be51-2bd28759dd24" />
 <img width="1253" height="705" alt="image" src="https://github.com/user-attachments/assets/26be02dd-298a-448b-804f-0df99d5c16e7" />
 <img width="1253" height="705" alt="image" src="https://github.com/user-attachments/assets/357fda0b-a4b0-4f49-89a8-8cf0038faea9" />
